@@ -12,9 +12,9 @@ pool:
 steps:
 
 - task: NodeTool@0
+  displayName: 'Use Node 18.17.0'
   inputs:
-    versionSource: 'spec'
-    versionSpec: '20.x'
+    versionSpec: 18.17.0
 
 - task: AzureStaticWebApp@0
   inputs:
