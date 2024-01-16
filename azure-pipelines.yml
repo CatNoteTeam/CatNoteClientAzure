@@ -22,6 +22,6 @@ steps:
 - task: AzureStaticWebApp@0
   inputs:
       app_location: 'cat-note-client'
-      app_build_command: 'npm run build:production'
+      app_build_command: 'npm run build'
       skip_api_build: true
       azure_static_web_apps_api_token: '$(DEPLOYMENT_TOKEN)'
