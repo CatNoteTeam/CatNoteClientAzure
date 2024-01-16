@@ -14,7 +14,6 @@ steps:
 - task: UseNode@0
   inputs:
     version: '18.17.0'
-    checkLatest: true
   displayName: 'Install Node.js'
 
 - task: AzureStaticWebApp@0
