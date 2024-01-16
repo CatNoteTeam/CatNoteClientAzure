@@ -11,9 +11,12 @@ pool:
 
 steps:
 
-- task: UseNode@0
-  inputs:
-    version: '18.17.0'
+- script: |
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+    nvm install 18.17.0
   displayName: 'Install Node.js'
 
 - task: AzureStaticWebApp@0
