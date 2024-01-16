@@ -12,12 +12,8 @@ pool:
 steps:
 - task: NodeTool@0
   inputs:
-    versionSpec: '18.17.0'
+    version: '18.17.0'
   displayName: 'Install Node.js'
-
-- powershell: |
-    Get-ChildItem -Path '$(System.DefaultWorkingDirectory)' -Recurse
-  displayName: 'List Contents of Project Directory'
 
 - task: AzureStaticWebApp@0
   inputs:
