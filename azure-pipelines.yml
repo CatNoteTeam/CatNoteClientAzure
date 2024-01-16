@@ -9,19 +9,25 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+  azure_static_web_apps_api_token: $(DEPLOYMENT_TOKEN)
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
 steps:
 - task: NodeTool@0
   inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node.js'
+    versionSource: 'spec'
+    versionSpec: '18.17.x'
 
-- powershell: |
-    Get-ChildItem -Path '$(System.DefaultWorkingDirectory)' -Recurse
-  displayName: 'List Contents of Project Directory'
+- script: |
+    npm install
+    npm run build
+  displayName: 'Install and Build'
 
 - task: AzureStaticWebApp@0
   inputs:
-      app_location: 'cat-note-client'
-      app_build_command: 'npm run build'
-      skip_api_build: true
-      azure_static_web_apps_api_token: '$(DEPLOYMENT_TOKEN)'
+    app_location: 'cat-note-client'
+    app_build_command: 'npm run build'
+    skip_api_build: true
+    azure_static_web_apps_api_token: $(azure_static_web_apps_api_token)
