@@ -11,6 +11,14 @@ pool:
 
 steps:
 
+- script: |
+    sed -i "s/#{SECRET}#/$AUTH0_SECRET/g" .env
+    sed -i "s/#{BASE_URL}#/$AUTH0_BASE_URL/g" .env
+    sed -i "s/#{ISSUER_BASE_URL}#/$AUTH0_ISSUER_BASE_URL/g" .env
+    sed -i "s/#{CLIENT_ID}#/$AUTH0_CLIENT_ID/g" .env
+    sed -i "s/#{CLIENT_SECRET}#/$AUTH0_CLIENT_SECRET/g" .env
+    sed -i "s/#{NEXT_PUBLIC_API_URL}#/$NEXT_PUBLIC_API_URL/g" .env
+  displayName: 'Replace variables in .env'
 - task: NodeTool@0
   displayName: 'Use Node 18.17.0'
   inputs:
