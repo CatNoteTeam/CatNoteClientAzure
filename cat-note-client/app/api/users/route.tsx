@@ -4,8 +4,10 @@ import {NextResponse} from "next/server";
 const backendApi = process.env.NEXT_PUBLIC_API_URL;
 
 export async function POST(req: any) {
+  try {
   const {accessToken} = await getAccessToken(req);
   const body = await req.json();
+  console.log(accessToken)
 
   const response = await fetch(`${backendApi}/api/user/${body.userName}`,
     {
@@ -16,8 +18,19 @@ export async function POST(req: any) {
       }
     });
 
-  const responseJson = await response.json();
-  return NextResponse.json(responseJson);
+    if (!response.ok) {
+      console.error(`HTTP error! Status: ${response.status}`);
+      const errorJson = await response.json();
+      console.error("Error details:", errorJson);
+      return NextResponse.error();
+    }
+
+    const responseJson = await response.json();
+    return NextResponse.json(responseJson);
+  } catch (error) {
+    console.error("Unexpected error:", error);
+    return NextResponse.error();
+  }
 }
 
 export async function PUT(req: any){
