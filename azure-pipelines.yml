@@ -19,6 +19,6 @@ steps:
 - task: AzureStaticWebApp@0
   inputs:
       app_location: 'cat-note-client'
-      app_build_command: 'npm install && npm run build'
+      app_build_command: 'npm install && npm run build && rm -rf ./.next/cache'
       skip_api_build: true
       azure_static_web_apps_api_token: '$(DEPLOYMENT_TOKEN)'
