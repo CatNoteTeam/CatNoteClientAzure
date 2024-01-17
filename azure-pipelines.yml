@@ -19,6 +19,10 @@ steps:
     sed -i "s/#{CLIENT_SECRET}#/$AUTH0_CLIENT_SECRET/g" cat-note-client/.env
     sed -i "s/#{NEXT_PUBLIC_API_URL}#/$NEXT_PUBLIC_API_URL/g" cat-note-client/.env
   displayName: 'Replace variables in .env'
+
+- script: cat cat-note-client/.env
+  displayName: 'Display updated .env'
+  
 - task: NodeTool@0
   displayName: 'Use Node 18.17.0'
   inputs:
