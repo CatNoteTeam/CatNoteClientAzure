@@ -4,33 +4,21 @@ import {NextResponse} from "next/server";
 const backendApi = process.env.NEXT_PUBLIC_API_URL;
 
 export async function POST(req: any) {
-  try {
-  const {accessToken} = await getAccessToken(req);
-  const body = await req.json();
-  console.log(accessToken)
+  // const {accessToken} = await getAccessToken(req);
+  // const body = await req.json();
 
-  const response = await fetch(`${backendApi}/api/user/${body.userName}`,
-    {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        Authorization: `Bearer ${accessToken}`
-      }
-    });
+  // const response = await fetch(`${backendApi}/api/user/${body.userName}`,
+  //   {
+  //     method: 'POST',
+  //     headers: {
+  //       'content-type': 'application/json',
+  //       Authorization: `Bearer ${accessToken}`
+  //     }
+  //   });
 
-    if (!response.ok) {
-      console.error(`HTTP error! Status: ${response.status}`);
-      const errorJson = await response.json();
-      console.error("Error details:", errorJson);
-      return NextResponse.error();
-    }
-
-    const responseJson = await response.json();
-    return NextResponse.json(responseJson);
-  } catch (error) {
-    console.error("Unexpected error:", error);
-    return NextResponse.error();
-  }
+  // const responseJson = await response.json();
+  // return NextResponse.json(responseJson);
+  return NextResponse.json({message: "smth"})
 }
 
 export async function PUT(req: any){
