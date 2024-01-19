@@ -13,7 +13,7 @@ import PetsIcon from '@mui/icons-material/Pets';
 import NavItem from "@/app/components/ui-components/menuItem/navItem";
 import NavButton from "@/app/components/ui-components/navButton/navButton";
 import ButtonVariant from "@/app/components/ui-components/button/buttonVariant";
-import './header.scss';
+import '../headerWithMenu/header.scss';
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = useState(null);
