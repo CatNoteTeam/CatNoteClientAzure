@@ -31,3 +31,7 @@ steps:
       app_build_command: 'npm i sharp && npm install && npm run build && rm -rf ./.next/cache'
       skip_api_build: true
       azure_static_web_apps_api_token: '$(DEPLOYMENT_TOKEN)'
+
+- script: |
+    cp -r cat-note-client/app/public/. cat-note-client/.next/static/media/
+  displayName: 'Copy files to .next/static/media'
