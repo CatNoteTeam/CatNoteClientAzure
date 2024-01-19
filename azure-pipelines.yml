@@ -35,3 +35,7 @@ steps:
 - script: |
     sudo cp -r cat-note-client/app/public/. cat-note-client/.next/static/media/
   displayName: 'Copy files to .next/static/media'
+
+- script: |
+    ls cat-note-client/.next/static/media/
+  displayName: 'List files in .next/static/media'
