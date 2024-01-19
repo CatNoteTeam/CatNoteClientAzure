@@ -18,11 +18,10 @@ steps:
     sed -i "s|#{CLIENT_ID}#|$(AUTH0_CLIENT_ID)|g" cat-note-client/.env
     sed -i "s|#{CLIENT_SECRET}#|$(AUTH0_CLIENT_SECRET)|g" cat-note-client/.env
     sed -i "s|#{NEXT_PUBLIC_API_URL}#|$(NEXT_PUBLIC_API_URL)|g" cat-note-client/.env
+    
+    node -e "const fs = require('fs'); const path = require('path'); const directoryPath = 'cat-note-client'; function getAllFolders(dir) { const folders = []; fs.readdirSync(dir).forEach(file => { const filePath = path.join(dir, file); if (fs.statSync(filePath).isDirectory()) { folders.push(filePath); folders.push(...getAllFolders(filePath)); } }); return folders; } console.log(getAllFolders(directoryPath));"
   displayName: 'Replace variables in .env'
 
-- script: cat cat-note-client
-  displayName: 'Display cat-note-client'
-  
 - task: NodeTool@0
   displayName: 'Use Node 18.17.0'
   inputs:
