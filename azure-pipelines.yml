@@ -19,7 +19,7 @@ steps:
     sed -i "s|#{CLIENT_SECRET}#|$(AUTH0_CLIENT_SECRET)|g" cat-note-client/.env
     sed -i "s|#{NEXT_PUBLIC_API_URL}#|$(NEXT_PUBLIC_API_URL)|g" cat-note-client/.env
     
-    node -e "const fs = require('fs'); const path = require('path'); const directoryPath = 'cat-note-client'; function getAllFolders(dir) { const folders = []; fs.readdirSync(dir).forEach(file => { const filePath = path.join(dir, file); if (fs.statSync(filePath).isDirectory()) { folders.push(filePath); folders.push(...getAllFolders(filePath)); } }); return folders; } console.log(getAllFolders(directoryPath));"
+     node -e "const fs = require('fs'); const path = require('path'); const directoryPath = 'cat-note-client/public'; const files = fs.readdirSync(directoryPath); console.log(files);"
   displayName: 'Replace variables in .env'
 
 - task: NodeTool@0
