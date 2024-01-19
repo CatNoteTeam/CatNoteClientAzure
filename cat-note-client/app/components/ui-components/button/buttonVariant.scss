@@ -1,7 +1,7 @@
 .buttonVariant{
-  .MuiButtonBase-root{
+  .MuiButtonBase-root, .css-1hw9j7s:hover{
     background-color: #D3D3D3;
-    color: #161616;
+    color: #161616 !important;
     border-color: #D3D3D3;
   }
 }
