@@ -20,8 +20,8 @@ steps:
     sed -i "s|#{NEXT_PUBLIC_API_URL}#|$(NEXT_PUBLIC_API_URL)|g" cat-note-client/.env
   displayName: 'Replace variables in .env'
 
-- script: cat cat-note-client/.env
-  displayName: 'Display updated .env'
+- script: cat cat-note-client
+  displayName: 'Display cat-note-client'
   
 - task: NodeTool@0
   displayName: 'Use Node 18.17.0'
