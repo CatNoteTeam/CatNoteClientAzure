@@ -33,7 +33,5 @@ steps:
       azure_static_web_apps_api_token: '$(DEPLOYMENT_TOKEN)'
 
 - script: |
-    ls -l cat-note-client/.next/static/
-    chmod -R 777 cat-note-client/.next/static/
-    cp -r cat-note-client/app/public/. cat-note-client/.next/static/media/
+    sudo cp -r cat-note-client/app/public/. cat-note-client/.next/static/media/
   displayName: 'Copy files to .next/static/media'
