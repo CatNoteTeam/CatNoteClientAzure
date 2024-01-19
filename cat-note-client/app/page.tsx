@@ -5,7 +5,7 @@ import {useRouter} from 'next/navigation'
 import React, {useEffect} from "react";
 import Image from 'next/image'
 import {Roboto} from 'next/font/google'
-import Kitty from '../app/public/kitty.png'
+import Kitty from '../.next/static/media/kitty.png'
 import './page.scss';
 import ButtonVariant from "@/app/components/ui-components/button/buttonVariant";
 
