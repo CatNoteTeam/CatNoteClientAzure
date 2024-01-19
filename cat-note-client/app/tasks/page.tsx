@@ -9,7 +9,7 @@ import TasksNode from "@/app/components/modules/tasksNode/tasksNode";
 import {Task} from "@/app/ts/interfaces/task";
 import TopUsersNode from "@/app/components/modules/topUsersNode/topUsersNode";
 import {User} from "@/app/ts/interfaces/user";
-import Paw from '../../public/paw.png'
+import Paw from '../../public/paw.svg'
 import Image from "next/image";
 
 function TasksPage() {
