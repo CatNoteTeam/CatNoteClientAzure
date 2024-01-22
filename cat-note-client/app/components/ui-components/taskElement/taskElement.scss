@@ -47,8 +47,14 @@
 
 .taskElement__select__option{
   font-size: 1rem;
-  background-color: #161616;
-  color: #D3D3D3;
+  background-color: #D3D3D3 !important;
+  color: #161616;
+}
+
+.taskElement__select__option:hover{
+  font-size: 1rem;
+  background-color: #a7a7a7 !important;
+  color: #161616;
 }
 
 .taskElement__input{
