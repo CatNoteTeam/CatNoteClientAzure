@@ -13,11 +13,13 @@ import PetsIcon from '@mui/icons-material/Pets';
 import NavItem from "@/app/components/ui-components/menuItem/navItem";
 import NavButton from "@/app/components/ui-components/navButton/navButton";
 import ButtonVariant from "@/app/components/ui-components/button/buttonVariant";
-import './header.scss';
+import '../headerWithMenu/header.scss';
+import { useUser } from '@auth0/nextjs-auth0/client';
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [isAdmin, setIsAdmin] = useState<boolean>(false);
+  const { user } = useUser();
 
   useEffect(() => {
     setIsAdmin(localStorage.getItem('isAdmin') === "true")
@@ -114,7 +116,7 @@ function Header() {
               <NavButton route="achievements"/>
             </Box>
 
-            <ButtonVariant route="/api/auth/logout" variant="contained" text="Logout"/>
+            {user && <ButtonVariant route="/api/auth/logout" variant="contained" text="Logout" />}
           </Toolbar>
         </Container>
       </AppBar>

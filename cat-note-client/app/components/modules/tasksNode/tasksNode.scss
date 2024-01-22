@@ -8,13 +8,9 @@
   padding: 0.5rem;
   background-color: #161616;
 
-  .css-1x51dt5-MuiInputBase-input-MuiInput-input{
+  .css-1x51dt5-MuiInputBase-input-MuiInput-input, .css-mnn31{
     font-size: 0.5rem;
-  }
-
-  .css-q0jhri-MuiInputBase-root-MuiInput-root{
-    width: 100%;
-    font-size: 0.6rem;
+    width: 10rem;
   }
 
   .css-1dmqq7i-MuiNativeSelect-select-MuiInputBase-input-MuiInput-input{
@@ -55,6 +51,7 @@
 .tasksNode__createTask__input {
   display: flex;
   height: 1.1rem;
+  background-color: #e5e5e59c;
 }
 
 .tasksNode__userTasks__task {

@@ -39,14 +39,27 @@
       color: #D3D3D3;
     }
   }
+
+  .css-1rqoqxy {
+    font-size: .6rem;
+  }
 }
 
 .taskElement__select__option{
   font-size: 1rem;
+  background-color: #D3D3D3 !important;
+  color: #161616;
+}
+
+.taskElement__select__option:hover{
+  font-size: 1rem;
+  background-color: #a7a7a7 !important;
+  color: #161616;
 }
 
 .taskElement__input{
   display: flex;
   height: 1.1rem;
   margin-bottom: 0.5rem;
+  background-color: #e5e5e59c;
 }
